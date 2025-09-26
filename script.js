@@ -45,10 +45,34 @@ function gameOver() {
     }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
+const rock = document.createElement("button");
+rock.textContent = "Rock";
+document.body.appendChild(rock);
+
+const paper = document.createElement("button");
+paper.textContent = "Paper";
+document.body.appendChild(paper);
+
+const scissors = document.createElement("button")
+scissors.textContent = "Scissors";
+document.body.appendChild(scissors);
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () =>{
+        
+        return button.textContent;
+
+
+    });
+});
+
+let buttonClicked = buttons.textContent
+
+document.getElementById(buttons).onclick = playRound(buttonClicked, computerChoice) {};
+
 
 gameOver();
+
+
+
